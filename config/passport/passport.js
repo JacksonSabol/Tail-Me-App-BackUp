@@ -40,9 +40,9 @@ module.exports = function (passport, auth) {
                     // Assign a variable to hold the user's authentication information
                     var data = {
                         email: email,
-                        password: userPassword,
-                        firstname: req.body.firstname,
-                        lastname: req.body.lastname
+                        password: userPassword
+                        // firstname: req.body.firstname,
+                        // lastname: req.body.lastname
                     };
                     // Create a row in the Auth table with the user's information
                     Auth.create(data).then(function (newUser, created) {
