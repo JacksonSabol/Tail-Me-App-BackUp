@@ -7,7 +7,7 @@ var passport = require('passport');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var env = require('dotenv').load();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 
 // Requiring our models for syncing
@@ -32,10 +32,18 @@ app.use(express.static("public"));
 // Import routes
 require("./routes/html-routes.js")(app);
 require("./routes/auth-routes.js")(app, passport);
-// require("./routes/task-api-routes.js")(app);
-// require("./routes/user-api-routes.js")(app);
+require("./routes/walker-api-routes.js")(app);
+require("./routes/owner-api-routes.js")(app);
+require("./routes/dog-api-routes.js")(app);
+require("./routes/walk-api-routes.js")(app);
+require("./routes/path-api-routes.js")(app);
 
-// React stuff here
+
+// React stuff here to serve up static assets (usually on heroku)
+// This is what worked for Mongoose, it may be different for Sequelize
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+// }
 
 // Syncing our sequelize models and then starting our Express app
 db.sequelize.sync({ force: true }).then(function () { // Set to false after Auth table is initially made post deployment
