@@ -4,7 +4,7 @@ import "../../index.css";
 const Footer = (props) => (
     <footer>
         <div>
-            Footer
+            Footer This
         </div>
     </footer>
 )
