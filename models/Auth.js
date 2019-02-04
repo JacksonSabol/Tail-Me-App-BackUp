@@ -1,34 +1,20 @@
-module.exports = function (sequelize, Sequelize) {
-    var Auth = sequelize.define('Auth', {
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
-        email: {
-            type: Sequelize.STRING,
-            validate: {
-                isEmail: true
-            }
-        },
-        password: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
-        last_login: {
-            type: Sequelize.DATE
-        },
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+    var auth = sequelize.define('auth', {
+        username: DataTypes.STRING,
+        password: DataTypes.STRING,
+        email: DataTypes.STRING,
+        last_login: DataTypes.DATE,
         status: {
-            type: Sequelize.ENUM('active', 'inactive'),
+            type: DataTypes.ENUM('active', 'inactive'),
             defaultValue: 'active'
         }
-    });
-    //    Auth.associate = function (models) {
-    //        // Associating Auth with User
-    //        // When an Auth is deleted, also delete any associated User
-    //        Auth.hasMany(models.User, {
-    //            onDelete: "cascade"
-    //        });
-    //    };
-    return Auth;
-}
+    }, {});
+    auth.associate = function (models) {
+        // association to user table
+        auth.hasOne(models.user, {
+            onDelete: "cascade"
+        });
+    };
+    return auth;
+};
