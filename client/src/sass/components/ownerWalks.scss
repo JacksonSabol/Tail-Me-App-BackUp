@@ -1,0 +1,110 @@
+
+.ownerWalks{
+    font-size: 2em;
+    background-image: radial-gradient($color-medium, $color-dark);
+    display:grid;
+    grid-template-columns: (15) 1fr;
+    grid-template-rows:  auto  ;
+    &__upcoming{
+        background-image: radial-gradient($color-medium, $color-dark);
+        grid-area: 1/1/2/6;
+        border: solid .25em $color-accentOne;
+        border-radius: 1em;
+        margin:1em;
+        display: grid;
+        grid-template-columns:  1fr;
+        grid-template-rows:  1fr auto auto auto auto auto ;  
+        box-shadow: 0em 0em .5em .5em $color-darkest;
+            &--title{
+                color: $color-accentOne;
+                font-size:2em;
+                font-family: $font-cursive;
+            }
+            &--list-publish{
+                list-style: none;
+                color: $color-accentWhite;
+                font-size: 1em;
+                margin: .25em;
+        
+            }
+            &--list-publish-button{
+                color: $color-lightest;
+                font-family: $font-sans;
+                background-color: $color-accentOne;
+                border: solid 2px $color-accentWhite;
+                border-radius: .5em;
+                font-size: 1em;
+            }
+    }
+
+    &__alert{
+        text-align: center;
+        font-family: $font-cursive;
+        font-size: 6em;
+        color: $color-accentOne;
+    }
+    &__past{
+        background-image: radial-gradient($color-medium, $color-dark);
+        grid-area: 1/6/2/16;
+        border: solid .25em $color-accentOne;
+        border-radius: 1em;
+        margin:1em;
+        display: flex;
+        flex-wrap: wrap;
+        box-shadow: 0em 0em .5em .5em $color-darkest;
+        &--title{
+            color: $color-accentOne;
+            font-size:2em;
+            font-family: $font-cursive;
+        }
+        &--list-publish{
+            list-style: none;
+            color: $color-accentWhite;
+            font-size: 1em;
+            margin: .25em;
+    
+        }
+        &--list-publish-button{
+            color: $color-lightest;
+            font-family: $font-sans;
+            background-color: $color-accentOne;
+            border: solid 2px $color-accentWhite;
+            border-radius: .5em;
+            font-size: 1em;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

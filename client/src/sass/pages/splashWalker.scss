@@ -1,0 +1,191 @@
+.walkersplash{
+    background-image: radial-gradient( $color-lightest, $color-mid);
+    &__grid{
+    height: 90%;
+    color: $color-darkest;
+    display:grid;
+    grid-template-columns: auto 1fr  1fr auto;
+    grid-template-rows: .5fr .5fr 1fr 1fr;
+    grid-template-areas:
+        ". . . . "
+        ". l  l ."
+        ". a  w ."
+        "f f f f ";
+        
+    grid-gap: 4em;
+    // justify-content: center;
+    // align-content: center;
+    }
+    &__logo{
+      grid-area: l;
+      justify-self: center;   
+    }
+    &__about{
+        grid-area: a;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr auto auto;
+        grid-template-areas:
+        "t t t"
+        "e e e"
+        "g g g";
+        
+        &--text{
+            grid-area: t;
+            font-size: 2.5em;
+            color: $color-darkest;
+            margin: 1em;
+            text-align: center;
+        }
+        &--link{
+            grid-area: e;
+            font-family: $font-sans;
+            font-size: 3em;
+            text-align: center;
+            color: $color-accentWhite;
+            background-color: $color-accentOne;
+            padding: .5em 1em;
+            border-radius: .5em;
+            border: solid 2px $color-accentWhite;
+            margin: 1em 0em;
+            box-shadow:  .2em .2em  .5em .1em $color-medium;
+            outline: none;
+            text-decoration: none;  
+        }
+        &--link:hover{
+            background-color: transparent;
+            letter-spacing: 0.1em;
+            color: $color-accentOne;
+            text-shadow: 2px 2px 8px $color-accentOne;
+            outline: none; 
+            text-decoration: none; 
+        }
+        &--userregistration{
+            grid-area: g;
+            font-family: $font-sans;
+            font-size: 3em;
+            text-align: center;
+            color: $color-accentWhite;
+            background-color: $color-accentOne;
+            padding: .5em 1em;
+            border-radius: .5em;
+            border: solid 2px $color-accentWhite;
+            margin: 1em 0em;
+            box-shadow:  .2em .2em  .5em .1em $color-medium;
+            outline: none;
+            text-decoration: none;
+        }
+        &--userregistration:hover{
+            background-color: transparent;
+            letter-spacing: 0.1em;
+            color: $color-accentOne;
+            text-shadow: 2px 2px 8px $color-accentOne;
+            outline: none; 
+            text-decoration: none
+        }
+
+    }
+    &__user{
+        grid-area: u;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr auto auto;
+        grid-template-areas:
+        "t t t"
+        "c c c"
+        "b b b";
+        &--text{
+            grid-area: t;
+            font-size: 2.5em;
+            color: $color-light;
+            margin: 1em;
+            text-align: center;
+        }
+        &--registration{
+            grid-area: b;
+            font-size: 2em;
+            text-align: center;
+            color: $color-lightest;
+            background-color: $color-dark;
+            padding: 1em 2em;
+            border-radius: .5em;
+            border: solid 2px $color-darkest;
+            margin: 1em;
+        }
+        &--registration:hover{
+            background-color: $color-darkest;
+            letter-spacing: 0.1em;
+            color: $color-accentOne;
+            text-shadow: 2px 2px 8px $color-accentOne;
+        }
+    }
+    &__walker{
+        grid-area: w;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr auto auto;
+        grid-template-areas:
+        "t t t"
+        "c c c"
+        "b b b";
+        &--text{
+            grid-area: t;
+            font-size: 2.5em;
+            color: $color-darkest;
+            margin: 1em;
+            text-align: center;
+        }
+        &--authentification{
+            grid-area: c;
+            font-family: $font-sans;
+            font-size: 3em;
+            text-align: center;
+            color: $color-accentWhite;
+            background-color: $color-accentOne;
+            padding: .5em 1em;
+            border-radius: .5em;
+            border: solid 2px $color-accentWhite;
+            margin: 1em 0em;
+            box-shadow:  .2em .2em  .5em .1em $color-medium;
+            outline: none;
+            text-decoration: none;  
+        }
+        &--authentification:hover{
+            background-color: transparent;
+            letter-spacing: 0.1em;
+            color: $color-accentOne;
+            text-shadow: 2px 2px 8px $color-accentOne;
+            outline: none; 
+            text-decoration: none; 
+        }
+        &--registration{
+            grid-area: b;
+            font-family: $font-sans;
+            font-size: 3em;
+            text-align: center;
+            color: $color-accentWhite;
+            background-color: $color-accentOne;
+            padding: .5em 1em;
+            border-radius: .5em;
+            border: solid 2px $color-accentWhite;
+            margin: 1em 0em;
+            box-shadow:  .2em .2em  .5em .1em $color-medium;
+            outline: none;
+            text-decoration: none;  
+        }
+        &--registration:hover{
+            background-color: transparent;
+            letter-spacing: 0.1em;
+            color: $color-accentOne;
+            text-shadow: 2px 2px 8px $color-accentOne;
+            outline: none; 
+            text-decoration: none; 
+        }
+    }
+    &__footer{
+        grid-area: f;
+        display: flex;
+        justify-content: center;
+    }
+    
+}

@@ -2,6 +2,8 @@ body {
     margin: 0;
     padding: 0; 
     background-color: $color-medium;
+    color: $color-lightest;
+    font-family: $font-sans;
   }
 
 html {
@@ -31,6 +33,7 @@ html {
 a {
   
   text-decoration: none;
+  color: $color-lightest;
   outline: none; }
 
 a:link {

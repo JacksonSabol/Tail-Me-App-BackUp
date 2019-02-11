@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 import axios from "axios";
 import "../index.css";
+import Footer from "../components/Footer";
+import logo from "../images/tailMeLogo.png";
+import homeIcon from "../images/homeIcon.png";
 
 const title = 'Sign Up as a Dog Walker';
 
@@ -77,44 +80,55 @@ class WalkerSignup extends Component {
 
         if (unregistered) {
             return (
-                <div>
-                    <p>{title}</p>
-                    <form className="signup-form" onSubmit={this.handleRegisterUser}>
-                        <input
+                <div className="walkerSignup">
+                <img className="walkerSignup__logo" src={logo} alt="tailME logo" ></img>
+                    <p className="walkerSignup__title"> {title}</p>
+                    <form className="walkerSignup__form" onSubmit={this.handleRegisterUser}>
+                    <label className="walkerSignup__form--emailLabel">Enter your Email</label>
+                        <input className="walkerSignup__form--emailInput"
                             type="email"
                             name="email"
                             value={this.state.email}
                             onChange={this.handleInputChange}
                             placeholder="john.doe@gmail.com"
                         />
-                        <input
+                        <label className="walkerSignup__form--usernameLabel">Choose your user name</label>
+                        <input className="walkerSignup__form--usernameInput"
                             type="text"
                             name="username"
                             value={this.state.username}
                             onChange={this.handleInputChange}
                             placeholder="UserName"
                         />
-                        <input
+                        <label className="walkerSignup__form--passwordLabel">Choose your password</label>
+                        <input className="walkerSignup__form--passwordInput"
                             type="password"
                             name="password"
                             value={this.state.password}
                             onChange={this.handleInputChange}
                             placeholder="Password"
                         />
-                        <button type="submit">Register</button>
+                        <button type="submit" className="walkerSignup__form--submitButton">Register</button>
                     </form>
                     {showError === true && registerError === true && (
                         <div>
-                            <p>Username, password, and email are required fields.</p>
+                            <p className="walkerSignup__form--alertOne">
+                            Username, password, and email are required fields.</p>
                         </div>
                     )}
                     {showError === true && loginError === true && (
                         <div>
-                            <p>That username is already taken. Please choose another, or login.</p>
-                            <p><a href="/user/login">Login</a></p>
+                            <p className="walkerSignup__form--alertTwo">
+                            That username is already taken. Please choose another, or login.</p>
+                            <p><a className="walkerSignup__form--alertButton" href="/user/login">Login</a></p>
                         </div>
                     )}
-                    <p><a href="/">Return to Home</a></p>
+                    <a className="walkerSignup__form--homeButton" href="/">
+                    <img className="walkerSignup__form--homeIcon" src={homeIcon} alt="home icon" >
+                    </img> Home</a>
+                    <div className="walkerSignup__form--footer">
+                    <Footer/>
+                    </div>
                 </div>
             );
         } else {
