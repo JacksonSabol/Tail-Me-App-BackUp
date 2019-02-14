@@ -46,7 +46,7 @@ function SidebarNavOwner(props) {
                 {/* Fix later in Sass; this just forces the logout button to fill the consecutive grid space */}
                 <div className="sidebar__nav--itemInvite">
                     <a
-                        href="#logout"
+                        href="#"
                         onClick={() => props.handleLogOut()}
                     >
                         Log Out

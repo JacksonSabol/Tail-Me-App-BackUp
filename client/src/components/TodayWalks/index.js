@@ -45,7 +45,7 @@ class TodayWalks extends Component {
         walkId: 0,
         images: [],
         pastWalks: [],
-        // zoom: 12,
+        zoom: 12,
         // center: [37.7924791, -122.1818368],
         showMap: false,
         locationckeck: false

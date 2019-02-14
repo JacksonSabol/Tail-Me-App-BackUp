@@ -18,7 +18,6 @@ module.exports = {
             })
             // .then(dbModel => console.log("From invitationPending in globalcontroller: ", dbModel))
             .then(dbModel => sendSMSowner(dbModel, walkerName))
-            // .catch(err => console.log(err));
             .catch(err => res.status(422).json(err));
 
 
